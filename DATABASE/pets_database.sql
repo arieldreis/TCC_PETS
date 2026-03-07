@@ -62,9 +62,11 @@ create table hotel_pet(
 	descricao text,
 	categoria enum("Econômico", "Moderado", "Premium"),
 	telefone varchar(30),
+	cnpj varchar()
 );
 create table creche(
 	id_creche int auto_increment primary key,
+	cnpj varchar()
 );
 create table veterinario(
 	id_veterinario int auto_increment primary key,
