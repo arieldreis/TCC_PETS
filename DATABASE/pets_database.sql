@@ -37,9 +37,9 @@ create table adocao(
 	catastracao enum("Castrado", "Não-castrado"),
 	vacinacao enum("Vacinado", "Não-vacinado"),
 	porte varchar("Pequeno", "Médio", "Grande"),
-	sobre text,
+	descricao text,
 	estado varchar(150),
-	telefone varchar(20)
+	telefone varchar(30)
 );
 -- Serviços oferecidos 
 create table cuidador(
@@ -47,12 +47,21 @@ create table cuidador(
 );
 create table passeador(
 	id_passeador int auto_increment primary key,
+	nome_passeador varchar(150),
+	descricao text,
+	estado varchar(100),
+	categoria enum("Econômico", "Moderado", "Premium"),
+	telefone varchar(30),
 );
 create table hospedagem(
 	id_hospedagem int auto_increment primary key,
 );
 create table hotel_pet(
 	id_hotelPet int auto_increment primary key,
+	nome_hotel varchar(150),
+	descricao text,
+	categoria enum("Econômico", "Moderado", "Premium"),
+	telefone varchar(30),
 );
 create table creche(
 	id_creche int auto_increment primary key,
