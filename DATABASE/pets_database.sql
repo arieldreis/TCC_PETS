@@ -12,6 +12,7 @@ create table passeador();
 create table hospedagem();
 create table hotel_pet();
 create table creche();
-create table veterinario();]
+create table veterinario();
 create table banho_tosa();
 create table adestrador();
+-- Outros dados
