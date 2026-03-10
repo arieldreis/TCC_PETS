@@ -4,7 +4,8 @@ create table clientPets_account(
 	nome varchar(200),
 	email varchar(250),
 	senha varchar(70),
-	cpf varchar(25)
+	cpf varchar(25), 
+	localizacao point,
 );
 -- Ong's
 create table pets_ongs(
@@ -14,7 +15,9 @@ create table pets_ongs(
 	cnpj varchar(),
 	telefone varchar(),
 	WhatsApp varchar(),
-	rede_instagram varchar()
+	rede_instagram varchar(),
+	senha varchar(),
+	localizacao point
 );
 -- Denúncia de animais perdidos
 create table animal_perdido_denuncia(
@@ -39,11 +42,15 @@ create table adocao(
 	porte varchar("Pequeno", "Médio", "Grande"),
 	descricao text,
 	estado varchar(150),
-	telefone varchar(30)
+	telefone varchar(30),
+	localizacao point,
 );
 -- Serviços oferecidos 
 create table cuidador(
 	id_cuidador int auto_increment primary key,
+	cpf varchar(),
+	senha varchar(),
+	
 );
 create table passeador(
 	id_passeador int auto_increment primary key,
@@ -52,9 +59,12 @@ create table passeador(
 	estado varchar(100),
 	categoria enum("Econômico", "Moderado", "Premium"),
 	telefone varchar(30),
+	senha varchar(),
+	cpf varchar(),
 );
 create table hospedagem(
 	id_hospedagem int auto_increment primary key,
+	tempo_estadia -- Colocar o valor em dd/MM/YYYY
 );
 create table hotel_pet(
 	id_hotelPet int auto_increment primary key,
@@ -62,19 +72,26 @@ create table hotel_pet(
 	descricao text,
 	categoria enum("Econômico", "Moderado", "Premium"),
 	telefone varchar(30),
-	cnpj varchar()
+	cnpj varchar(),
+	senha varchar()
 );
 create table creche(
 	id_creche int auto_increment primary key,
-	cnpj varchar()
+	cnpj varchar(),
+	senha varchar()
 );
 create table veterinario(
 	id_veterinario int auto_increment primary key,
+	nome_medico varchar()
+	senha varchar(),
 );
 create table petShop(
 	id_petShop int auto_increment primary key,
+	localizacao point,
+	senha varchar(),
 );
 create table adestrador(
 	id_adestrador int auto_increment primary key,
+	senha varchar(),
 );
 -- Outros dados
