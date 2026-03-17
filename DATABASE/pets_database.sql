@@ -11,13 +11,13 @@ create table clientPets_account(
 create table pets_ongs(
 	id_pets_ongs int auto_increment primary key,
 	nome_ong varchar(150),
-	chave_pix varchar(),
-	cnpj varchar(),
-	telefone varchar(),
-	WhatsApp varchar(),
-	rede_instagram varchar(),
-	senha varchar(),
-	localizacao point
+	chave_pix varchar(40),
+	cnpj varchar(20),
+	telefone varchar(30),
+	WhatsApp varchar(20),
+	rede_instagram varchar(50),
+	senha varchar(60), -- Colocar a senha de no minímo de 60 caractéres. 
+	localizacao point -- O valor point tem como função armazenar fotos. 
 );
 -- Denúncia de animais perdidos
 create table animal_perdido_denuncia(
@@ -25,8 +25,9 @@ create table animal_perdido_denuncia(
 	tipo_animal enum("Cachorro", "Gato", "Passaro", "Ave", "Outros"),
 	urgencia enum("Baixa", "Média", "Alta", "Crítica - Risco de vida");
 	descricao text,
-	localizacao 
-	cidade
+	latitude decimal(9, 6),
+	longitude decimal(9, 6),
+	cidade varchar(50),
 	telefone varchar(30),
 	foto bytea -- This kinda of data storage a photo.
 );
@@ -72,26 +73,28 @@ create table hotel_pet(
 	descricao text,
 	categoria enum("Econômico", "Moderado", "Premium"),
 	telefone varchar(30),
-	cnpj varchar(),
-	senha varchar()
+	cnpj varchar(20),
+	senha varchar(60)
 );
 create table creche(
 	id_creche int auto_increment primary key,
-	cnpj varchar(),
-	senha varchar()
+	cnpj varchar(20),
+	senha varchar(60)
 );
 create table veterinario(
 	id_veterinario int auto_increment primary key,
-	nome_medico varchar()
-	senha varchar(),
+	nome_medico varchar(100)
+	senha varchar(60),
 );
 create table petShop(
 	id_petShop int auto_increment primary key,
-	localizacao point,
-	senha varchar(),
+	latitude decimal(9, 6)
+	longitude decimal(9, 6)
+	senha varchar(60),
 );
 create table adestrador(
 	id_adestrador int auto_increment primary key,
-	senha varchar(),
+	nome_adestrador varchar(100),
+	senha varchar(60),
 );
 -- Outros dados
